@@ -11,8 +11,8 @@ for fname in sys.argv[1:]:
 
 			ln = ln.replace('</p>', '')
 			ln = ln.replace('<p>', '\n')
-			ln = ln.replace('<h2>', '<strong>')
-			ln = ln.replace('</h2>', '</strong>')
+			ln = ln.replace('<h2>', '<strong><em>')
+			ln = ln.replace('</h2>', '</em></strong>')
 			ln = ln.replace('<h3>', '<strong>')
 			ln = ln.replace('</h3>', '</strong>')
 
