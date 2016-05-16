@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 
+import re
 import sys
 
 msgctx = None
@@ -26,9 +27,16 @@ def check(f):
 
 	lineno = 0
 	draft = False
+	pre = False
 	for ln in f.readlines():
 		lineno += 1
 		msgctx = (f.name, lineno, ln.strip())
+
+		# Track whether we are in a preformatted block
+		if '<pre>' in ln:
+			pre = True
+		if '</pre>' in ln:
+			pre = False
 
 		# Warn for every draft question (but disable all other checks)
 		if '**' in ln and 'Q:' in ln and '?' in ln:
@@ -56,6 +64,13 @@ def check(f):
 			if name + ':' in ln:
 				err('Private note')
 				break
+
+		# Check for signs of github flavoured markdown. This is not
+		# supported by cmark (and mostly also not by wordpress)
+
+		# Table syntax (this is targetting the --- | ---- | ---- line)
+		if re.match('^[ ]*-[ -]*[|+][ -|+]*$', ln.rstrip()) and not pre:
+			err('github table syntax extensions are not supported (use <pre>?)')
 
 for fname in sys.argv[1:]:
 	with open(fname) as f:
