@@ -4,15 +4,22 @@ import sys
 
 for fname in sys.argv[1:]:
 	with open(fname) as f:
-		g = open('front-matter.md', 'w')
+		draft = False
+		g = None
 
 		for ln in f.readlines():
 			if ln.strip().startswith('# '):
-				g.close()
+				if g:
+					g.close()
 				gname = ln[1:].strip().replace(' ', '-')+'.md'
 				g = open(gname, 'w')
 				continue
 
-			g.write(ln)
+			if '**' in ln and 'Q:' in ln and '?' in ln:
+				draft = 'DRAFT' in ln
 
-		g.close()
+                        if g and not draft:
+				g.write(ln)
+
+		if g:
+			g.close()
