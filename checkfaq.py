@@ -32,6 +32,12 @@ def check(f):
 		lineno += 1
 		msgctx = (f.name, lineno, ln.strip())
 
+		# Skip comments (comments should generally be avoided
+		# but if it avoids revert wars on the github wiki
+		# then these are OK)
+		if ln.strip().startswith('faq-comment: '):
+			continue
+
 		# Track whether we are in a preformatted block
 		if '<pre>' in ln:
 			pre = True
