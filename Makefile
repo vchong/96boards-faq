@@ -2,13 +2,17 @@
 # Split out pages from the FAQ nursery ready to copy to wordpress
 #
 
+ifdef IGNORE_CHECKFAQ
+C=-
+endif
+
 MD = $(subst README.md,,$(wildcard *.md))
 HTML = $(MD:%.md=%.html)
 WP = $(HTML:%.html=%.wp)
 
 all : 96boards-wiki
 	cd 96boards-wiki && git pull
-	python checkfaq.py 96boards-wiki/The-FAQ-nursery.md
+	$(C)python checkfaq.py 96boards-wiki/The-FAQ-nursery.md
 	python split-topics.py 96boards-wiki/The-FAQ-nursery.md
 	$(MAKE) _all
 
