@@ -2,7 +2,7 @@
 # Split out pages from the FAQ nursery ready to copy to wordpress
 #
 
-MD = $(wildcard *.md)
+MD = $(subst README.md,,$(wildcard *.md))
 HTML = $(MD:%.md=%.html)
 WP = $(HTML:%.html=%.wp)
 
