@@ -1,0 +1,112 @@
+<strong>Q: Where should I look for documentation?</strong>
+
+There's a wealth of documentation for the Dragonboard 410c. So much that it is quite possible that need a bit of help finding which document is the best one for you to read! If you can't find what you're looking for, feel free to ask on the forum. Usually someone will come along with a &quot;hello&quot; and a link!. However... if you're in a hurry let us offer you some ideas:
+<ul>
+<li><a href="https://www.96boards.org/documentation/ConsumerEdition/DragonBoard-410c/README.md/">DragonBoard 410c Documentation (at 96boards.org)</a>. This is a great starting point for hunting down board manuals, schematics and all the other documentation we require 96Boards vendors to put together (and, in the case of DragonBoard, a whole lot more besides).</li>
+<li><a href="https://developer.qualcomm.com/hardware/dragonboard-410c/tools">DragonBoard 410c Tools and Resources by Qualcomm</a>. This is Qualcomm's own page about the board. It contains several documents not found in this site and, if Windows 10 IoT is your thing then this is where you go to get it.</li>
+</ul>
+
+<strong>Q: How to boot after buying the DragonBoard 410c?</strong>
+
+Probably this is the first topic you would like to know. Please refer the instruction to boot your board with HDMI display.
+<ul>
+<li><a href="http://www.96boards.org/forums/topic/short-into-to-start-your-dragonboard-410c-with-hdmi-display/">Getting started with HDMI display</a></li>
+</ul>
+
+<strong>Q: How to use serial console on 96Boards?</strong>
+
+The access to the board with serial console is essential for most for the developers. We have made the tutorial describing one of the easiest ways to get started with the serial console.
+<ul>
+<li><a href="http://www.96boards.org/forums/topic/short-into-to-start-your-dragonboard-410c-with-serial-console/">Getting started with serial console on Dragonboard 410c</a></li>
+</ul>
+
+<strong>Q: What is the best source of information about Windows 10 IoT for DragonBoard 410c?</strong>
+
+Please refer the link to obtain the information of Windows IoT on DragonBoard 410C.
+<ul>
+<li><a href="http://www.96boards.org/forums/topic/windows-10/">How to Setup Windows 10 IoT Core on Dragonboard</a></li>
+</ul>
+
+<strong>Q: How do I use GPS with the debian-derived software images?</strong>
+
+We've been looking at GPS in the debian-based images, and it's now working &quot;in the lab&quot;. It's not yet integrated into the builds (not even the snapshot builds) but we have posted instructions on the forum. Our goal is to have everything merged into our build by the end of June. The final solution may be slightly different, but the steps posted to the forum are known to work...
+<ul>
+<li>http://www.96boards.org/forums/topic/gps-software/#post-14390</li>
+</ul>
+
+<strong>Q: Why USB is slow on my DragonBoard 410C?</strong>
+
+The old releases had an issue with USB throughput. The issue was fixed from 15.11 release.
+Please update your image to the latest image from following link.
+<ul>
+<li><a href="http://www.96boards.org/documentation/ConsumerEdition/DragonBoard-410c/Installation/README.md/">Choose your Build, Operating system, and Install Method</a></li>
+</ul>
+
+<strong>Q: Why the WiFi connection drops out periodically?</strong>
+
+The work around for this issue is included from 16.06 and later releases
+and should not have the WIFI connection drops.
+
+Bellow is for the record only.
+<hr />
+
+Yes, we are aware of the WIFI being disconnected periodically and in the middle of fixing the symptom.
+
+This is the link in bug tracking system.
+<ul>
+<li><a href="https://bugs.96boards.org/show_bug.cgi?id=272">Bug 272 - periodic 10-15sec wifi connectivity loss</a></li>
+</ul>
+
+You may try the temporary workaround described at the bellow link until it is fixed.
+<ul>
+<li><a href="http://www.96boards.org/forums/topic/ssh-and-ping-workarounds/">WIFI workaround</a></li>
+</ul>
+<hr />
+
+<strong>Q: What is changed in the new release and how to customize the Linux kernel by building from source?</strong>
+
+There are great descriptions of what have improved on the new releases and known problem with detail instruction to build the Linux kernel from source.
+<ul>
+<li><a href="http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/">Documentation by Linaro Qualcomm Landing Team</a></li>
+</ul>
+
+<strong>Q: Why the DragonBoard 410C does not recognized by adb on windows?</strong>
+
+The usb driver for adb on windows requires modification from Android web site.
+We have made the revised usb driver. Please try this driver.
+<ul>
+<li><a href="https://fileserver.linaro.org/owncloud/index.php/s/FR4vgUL2d101HKn">adb usb driver windows DB410C</a></li>
+</ul>
+
+<strong>Q: How to install adb usb driver on Windoes for DragonBoard 410C?</strong>
+
+This is the instruction to install modified usb driver for adb on windows.
+<ul>
+<li><a href="http://www.96boards.org/forums/topic/step-by-step-instruction-to-install-adb-usb-driver-on-windows/">Step by step instruction to install adb usb driver on windows</a></li>
+</ul>
+
+<strong>Q: How can I find the right application notes published in pdf?</strong>
+
+There are many great application notes uploaded on developer.qualcomm.com.
+We have made a center page linking to the pdf files with the distinction of the contents.
+<ul>
+<li><a href="http://www.96boards.org/documentation/ConsumerEdition/DragonBoard-410c/AdditionalDocs/README.md/">&quot;How to&quot; documents on Qualcomm Developer Network</a></li>
+</ul>
+
+<strong>Q: Where can I find the case?</strong>
+
+There are nice cases made by Arrows.
+<ul>
+<li>
+
+<a href="http://www.chip1stop.com/web/USA/en/dispDetail.do?partId=ARRD-0000043&amp;cid=dragonboard410c">DragonBoard 410c Case Clear</a>
+</li>
+<li>
+
+<a href="http://www.chip1stop.com/web/USA/en/dispDetail.do?partId=ARRD-0000040&amp;cid=dragonboard410c">DragonBoard 410c Case Blue</a>
+</li>
+</ul>
+
+<strong>Q: Is this it? There are no other frequently-asked-questions?</strong>
+
+This is all we've come up with for the DragonBoard 410c. However if you browse over to <a href="http://www.96boards.org/forums/forum/general/">the General forum</a> you'll find a FAQ covering questions of a general nature. That includes questions about the 96Boards project, as well as technical questions whose answers apply to more than one board.

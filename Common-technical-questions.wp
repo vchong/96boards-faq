@@ -1,0 +1,39 @@
+<strong>Q: Can I use the micro USB cable to power my board?</strong>
+
+Consumer Edition and Enterprise Edition 96Boards do not draw system power from their micro-USB sockets. To read why we decided not to permit this please take a look at:
+<ul>
+<li><a href="https://www.96boards.org/products/accessories/power/">96Boards Power Accessories</a></li>
+</ul>
+
+<strong>Q: What type of AC adapter do I need?</strong>
+
+This question is important as using the wrong method to powering the 96Boards risks damage to your board.
+Please refer the link to buy appropriate AC adapter with the right DC plug.
+<ul>
+<li><a href="https://www.96boards.org/products/accessories/power/">How to select the correct AC adapter</a></li>
+</ul>
+
+<strong>Q: How do I turn on the 96Boards? Where is the power button?</strong>
+
+This is a good question since most of the regular PC has a power button to turn on/off power supply which is controlled by the motherboard.
+
+The way to turn on all of the current 96Boards is just plug in your AC adapter to the DC jack and it will automatically start booting the bootloader and OS.
+
+There is no power LED on the 96Boards, so there will be no indication if the 96Boards has been powered or not at the glance.
+
+It starts to boot the bootloader but please wait for some time until screen shows up on the HDMI display.
+
+If you have connected the serial console, watching the boot messages are also good indication of booting.
+
+There are 4 LED between the two USB Type A connector and some of them will start flushing after OS has booted.
+
+<strong>Q: How to program devices connecting to GPIO/I2C on 96Boards?</strong>
+
+One of the great value of 96Boards is connecting sensors and devices and programming LED, relay, motors and etc to create robotics, cameras, set-top-boxes, wearables, medical devices, vending machines, building automation, industrial control, digital signage, and casino gaming consoles.
+
+Reading the blog series is a great introduction to program GPIO/I2C devices on 96Boards:
+<ul>
+<li><a href="http://www.96boards.org/blog/96boards-box-experience-guide-4/">Programming GPIO from bash</a></li>
+<li><a href="http://www.96boards.org/blog/96boards-box-experience-guide-5/">Programming GPIO using libsoc</a></li>
+<li><a href="http://www.96boards.org/blog/programing-i2c-devices-libmraa-libupm/">Programing I2C devices with libmraa and libupm</a></li>
+</ul>
