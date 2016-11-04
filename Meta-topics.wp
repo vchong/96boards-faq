@@ -1,0 +1,30 @@
+
+<em>The meta-questions describe the role of this document. The questions in this section should <em>not</em> be copied to the forum FAQs.</em>
+
+<strong>Q: Can I edit this document?</strong>
+
+Sure. The only things you really need to know is that:
+<ol>
+<li>
+
+If you want your changes to go live immediately then you need to contact Akira (@mcd500). We haven't fully automated the flow from the nursery to the forums so we need the ping for anything urgent.
+</li>
+<li>
+
+If the question does not yet have an adequate answer, perhaps because you're still thinking about it or because you want to encourage someone else to write one, then make sure to add '(DRAFT)' somewhere in the question. Draft questions are never copied to the forum.
+</li>
+</ol>
+
+<strong>Q: What is the FAQ nursery?</strong>
+
+One meaning of nursery is to describe a business that grows young plants until they are strong enough to be sold in a garden centre. In the same way that a nursery nurtures immature plants until they are ready to face the world, the FAQ nursery allows FAQs to be collaboratively edited (in markdown format) whilst they are not ready to be shared on the forum.
+
+The nursery is, by design, not the place to come for complete (or even coherent) answers. It is a place to come to write, propose and savagely edit our frequently-asked-questions.
+
+<strong>Q: How should I phrase questions?</strong>
+
+FAQs are presented as questions and answers and it is important that the question is a question, rather than a title. It should read as a full English sentence that requests information.
+
+<strong>Q: What is the right tone (of language) for answers?</strong>
+
+A FAQ is <em>not</em> documentation and need not adopt the formal approach commonly found in technical documentation. Instead answers in a FAQ should adopt the more informal tone we expect to find on the forum.

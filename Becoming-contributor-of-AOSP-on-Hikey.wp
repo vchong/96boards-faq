@@ -1,0 +1,110 @@
+<strong><em>Prerequisites</em></strong>
+<ul>
+<li>
+
+Familiarize yourself with Gerrit; here are some links:
+<ul>
+<li>https://wiki.linaro.org/Platform/Android/Gerrit</li>
+<li>https://wiki.openstack.org/wiki/Gerrit_Workflow</li>
+</ul>
+</li>
+<li>
+
+Make sure you have an account on https://android-review.googlesource.com/ and are properly added to the contributors agreement.
+</li>
+<li>
+
+Get a http password:
+<ul>
+<li>Log in to android-review.googlesource.com</li>
+<li>Click on your name on the upper right, then settings.</li>
+<li>Click on HTTP password, then obtain password.</li>
+<li>Copy the string to a script &quot;login-googlesource.sh&quot;.</li>
+<li>Make the the script executable &quot;chmod u+x login-googlesource.sh&quot;.</li>
+</ul>
+</li>
+<li>
+
+Accept the Contributor Agreement, if necessary
+</li>
+</ul>
+<strong><em>Get the latest AOSP kernel tree</em></strong>
+<ul>
+<li>Run the following commands:</li>
+</ul>
+<pre><code>$ export AOSP=hikey
+$ export BRANCH=master
+$ export LOCAL=mychanges
+$ git clone https://android.googlesource.com/device/linaro/hikey
+$ cd $AOSP
+$ git checkout origin/$BRANCH -b $LOCAL
+</code></pre>
+<strong><em>Commit your changes</em></strong>
+
+Patch, git add and git commit everything you want. Your patches should at least pass scripts/checkpatch.pl, as usual
+<strong><em>Add a Change-Id</em></strong>
+
+Gerrit wants each logical change to have a Change-Id. This allows future versions of the same change (maybe modified due to review feedback) to have the same reference hash.
+
+Get the sha1 list, you will need them on the next step:
+<pre><code>$ git log --pretty=o origin/${BRANCH}..HEAD &gt; ../sha1.list
+</code></pre>
+
+Rebase your changes to rework commit messages and add manual Change-Id tags for each patch:
+<pre><code>$ git rebase -i origin/$BRANCH
+</code></pre>
+
+Change all the &quot;pick&quot;s to &quot;reword&quot; or just &quot;r&quot;
+
+Then
+<ul>
+<li>Above the &quot;Signed-off-by:&quot; lines, add:</li>
+</ul>
+<pre><code>Change-Id: I&lt;original sha1sum for change from shalist&gt;
+</code></pre>
+<ul>
+<li>Note the I is the prefix on the sha1sum.</li>
+</ul>
+<strong><em>Push the changes</em></strong>
+
+Review all changes, making sure each has a unique Change-Id.
+
+And finally, run
+<pre><code>$ ./login-googlesource.sh
+$ git push origin $LOCAL:refs/for/$BRANCH
+</code></pre>
+
+Then it will show the out put like this.
+<pre><code>Counting objects: 22, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 527 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3)
+remote: Processing changes: new: 1, done
+remote:
+remote: New Changes:
+remote:   https://android-review.googlesource.com/[numbers] Title-of-your-patch
+remote:
+To https://android.googlesource.com/device/linaro/hikey
+ * [new branch]      mychanges -&gt; refs/for/master
+</code></pre>
+
+Visit the link showing above:
+
+<code>https://android-review.googlesource.com/[numbers]</code>
+
+And add following reviewers:
+<ul>
+<li>john.stultz</li>
+<li>guodong.xu</li>
+<li>vishal.bhoj
+<ul>
+<li>(all three persons have the same @linaro.org address)</li>
+</ul>
+</li>
+</ul>
+
+Have fun!
+
+(This documentation was referred from https://wiki.linaro.org/Process/PushingBitsToAndroid)
